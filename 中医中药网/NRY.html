@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食疗调理 - 中医中药网</title>
+    <link rel="icon" href="images/teapot.ico">
+    <style>
+        /* 背景图 */
+        .backg {
+            background-image: url(../中医中药网/images/background.jpg);
+            /* 设置背景图片 */
+            background-size: cover;
+            /* 背景图片覆盖容器大小 */
+        }
+
+        /* 确保容器不限制 sticky 定位 */
+        body,
+        .container {
+            overflow: visible;
+            /* 保证容器不限制 sticky 定位 */
+        }
+
+        /* 头部背景和搜索栏容器 */
+        .header-top {
+            display: flex;
+            /* 使用 Flexbox 布局，子元素水平排列 */
+            justify-content: space-between;
+            /* 子元素左右分布 */
+            align-items: center;
+            /* 垂直居中对齐 */
+            background-image: url('../中医中药网/images/top.png');
+            /* 设置背景图 */
+            background-size: cover;
+            /* 背景图片覆盖容器 */
+            background-position: center;
+            /* 背景图片居中 */
+            height: 150px;
+            /* 设置容器的高度 */
+            padding: 0 30px;
+            /* 左右内边距 */
+        }
+
+        /* Logo 样式 */
+        .logo {
+            width: 674px;
+            /* Logo 的宽度 */
+            border-right: 2px solid #eee;
+            /* Logo 右侧边框 */
+            font-size: 40px;
+            /* 字体大小 */
+            text-align: center;
+            /* 文本居中 */
+            white-space: nowrap;
+            /* 防止换行 */
+            overflow: hidden;
+            /* 超出部分隐藏 */
+            color: #2a1506;
+            /* 字体颜色 */
+            font-family: "楷体", serif;
+            /* 字体 */
+        }
+
+        /* 动画效果 */
+        .animation {
+            animation: grow 4s steps(44) 1s normal both,
+                /* 动画：宽度逐渐增长 */
+                blink 0.5s steps(44) infinite normal;
+            /* 动画：闪烁效果 */
+        }
+
+        @keyframes grow {
+            from {
+                width: 0;
+                /* 动画开始时宽度为0 */
+            }
+
+            to {
+                width: 400px;
+                /* 动画结束时宽度为400px */
+            }
+        }
+
+        @keyframes blink {
+            from {
+                border-right-color: #eee;
+                /* 初始颜色 */
+            }
+
+            to {
+                border-right-color: #222;
+                /* 闪烁后的颜色 */
+            }
+        }
+
+        /* 搜索栏样式 */
+        .search form {
+            display: flex;
+            /* 使用 Flexbox 布局 */
+            position: relative;
+            right: 50px;
+            /* 向右偏移50px */
+        }
+
+        /* 搜索框输入框样式 */
+        .search input[type="search"] {
+            padding: 10px;
+            /* 内边距 */
+            font-size: 14px;
+            /* 字体大小 */
+            width: 200px;
+            /* 宽度 */
+        }
+
+        /* 搜索框提交按钮样式 */
+        .search input[type="submit"] {
+            padding: 10px;
+            /* 内边距 */
+            font-size: 14px;
+            /* 字体大小 */
+            background-color: #000000;
+            /* 背景色 */
+            color: white;
+            /* 字体颜色 */
+            border: none;
+            /* 去除边框 */
+            cursor: pointer;
+            /* 鼠标悬停时显示手型 */
+        }
+
+        /* 搜索框提交按钮：悬停时的样式 */
+        .search input[type="submit"]:hover {
+            background-color: #57575e;
+            /* 悬停时背景色变化 */
+        }
+
+        /* 导航栏样式 */
+        #navbar {
+            background-color: rgb(93, 72, 45);
+            /* 背景色 */
+            position: sticky;
+            /* 使导航栏粘性定位 */
+            top: 0;
+            /* 定位在顶部 */
+            width: 100%;
+            /* 宽度占满整个屏幕 */
+            height: 60px;
+            /* 高度 */
+            z-index: 1000000;
+            /* 设置较高的层级，使其在其他元素上方 */
+        }
+
+        /* 导航栏列表样式 */
+        .nav ul {
+            width: 60%;
+            /* 设置宽度 */
+            height: 30px;
+            /* 设置高度 */
+            display: flex;
+            /* 使用 Flexbox 布局 */
+            margin: 0;
+            /* 去除外边距 */
+            padding-left: 20%;
+            /* 左内边距 */
+            padding-right: 20%;
+            /* 右内边距 */
+            list-style: none;
+            /* 去除列表项符号 */
+            padding-top: 15px;
+            /* 上内边距 */
+            justify-content: space-between;
+            /* 子元素之间均匀分布 */
+        }
+
+        /* 导航链接样式 */
+        .ltitle {
+            text-decoration: none;
+            /* 去除下划线 */
+            color: white;
+            /* 字体颜色 */
+            font-size: 20px;
+            /* 字体大小 */
+        }
+
+        /* 导航链接：悬停效果 */
+        .nav ul li a:hover {
+            color: #a9a9a9;
+            /* 悬停时颜色变化 */
+        }
+
+        /* 导航栏列表项样式 */
+        .nav ul li {
+            position: relative;
+            /* 设置相对定位 */
+        }
+
+        /* 下拉菜单容器样式 */
+        .drop {
+            display: inline-block;
+            /* 设置为行内块元素 */
+        }
+
+        /* 下拉菜单内容样式 */
+        .dropcontent {
+            display: none;
+            /* 默认隐藏 */
+            position: absolute;
+            /* 绝对定位 */
+            background-color: rgb(93, 72, 45);
+            /* 背景色 */
+            min-width: 160px;
+            /* 设置最小宽度 */
+            z-index: 1;
+            /* 设置层级 */
+        }
+
+        /* 下拉菜单项样式 */
+        .dropcontent a {
+            color: rgb(255, 255, 255);
+            /* 字体颜色 */
+            padding: 12px 16px;
+            /* 内边距 */
+            text-decoration: none;
+            /* 去除下划线 */
+            display: block;
+            /* 块级元素 */
+            text-align: left;
+            /* 左对齐 */
+        }
+
+        /* 下拉菜单项：悬停效果 */
+        .dropcontent a:hover {
+            background-color: rgb(95, 76, 51);
+            /* 悬停时背景色变化 */
+        }
+
+        /* 鼠标悬停下拉菜单时显示菜单 */
+        .drop:hover .dropcontent {
+            display: block;
+            /* 显示下拉菜单 */
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background-color: #f1f1f1;
+            /* 背景色 */
+            padding: 20px 0;
+            /* 内边距 */
+            border-top: 1px solid #ccc;
+            /* 顶部边框 */
+            display: flex;
+            /* 使用 Flexbox 布局 */
+            flex-direction: column;
+            /* 垂直排列子元素 */
+            align-items: center;
+            /* 居中对齐 */
+            justify-content: center;
+            /* 垂直居中 */
+        }
+
+        /* 内容部分样式 */
+        .content {
+            padding: 30px;
+            /* 内边距 */
+            color: #333;
+            /* 字体颜色 */
+            max-width: 1100px;
+            /* 最大宽度 */
+            margin: 0 auto;
+            /* 居中对齐 */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* 背景色，透明度0.8 */
+            border-radius: 8px;
+            /* 圆角边框 */
+        }
+
+        /* 标题样式 */
+        h1,
+        h2,
+        h3 {
+            color: #5c4d3d;
+            /* 标题字体颜色 */
+            font-family: "楷体", serif;
+            /* 字体 */
+        }
+
+        /* 段落样式 */
+        p {
+            font-size: 16px;
+            /* 字体大小 */
+            line-height: 1.6;
+            /* 行高 */
+            margin: 10px 0;
+            /* 上下外边距 */
+        }
+
+        /* 食疗方列表样式 */
+        .food-recipe {
+            display: flex;
+            /* 使用 Flexbox 布局 */
+            flex-wrap: wrap;
+            /* 换行 */
+            gap: 20px;
+            /* 子元素之间的间距 */
+        }
+
+        /* 食疗方卡片样式 */
+        .recipe-card {
+            background-color: #fff;
+            /* 背景色 */
+            border: 1px solid #ddd;
+            /* 边框 */
+            padding: 20px;
+            /* 内边距 */
+            width: 45%;
+            /* 宽度 */
+            border-radius: 8px;
+            /* 圆角边框 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* 阴影效果 */
+        }
+
+        /* 食疗方卡片标题样式 */
+        .recipe-card h3 {
+            font-size: 18px;
+            /* 字体大小 */
+            color: #5c4d3d;
+            /* 字体颜色 */
+        }
+
+        /* 食疗方卡片段落样式 */
+        .recipe-card p {
+            font-size: 14px;
+            /* 字体大小 */
+            color: #777;
+            /* 字体颜色 */
+        }
+
+        /* 页脚链接容器 */
+        .footer .footer-links {
+            display: flex;
+            /* 使用 Flexbox 布局 */
+            justify-content: center;
+            /* 水平居中 */
+            gap: 50px;
+            /* 元素之间的间距 */
+            margin-bottom: 20px;
+            /* 底部外边距 */
+        }
+
+        /* 页脚链接样式 */
+        .footer .footer-links a {
+            text-decoration: none;
+            /* 去除下划线 */
+            color: #333;
+            /* 字体颜色 */
+            font-size: 16px;
+            /* 字体大小 */
+            transition: color 0.3s;
+            /* 过渡效果 */
+        }
+
+        /* 页脚链接：悬停效果 */
+        .footer .footer-links a:hover {
+            color: #5c4d3d;
+            /* 悬停时颜色变化 */
+        }
+
+        /* 页脚信息样式 */
+        .footer .footer-info {
+            font-size: 14px;
+            /* 字体大小 */
+            color: #777;
+            /* 字体颜色 */
+            text-align: center;
+            /* 居中对齐 */
+        }
+
+        /* 页脚信息链接样式 */
+        .footer .footer-info a {
+            text-decoration: none;
+            /* 去除下划线 */
+            color: #5c4d3d;
+            /* 字体颜色 */
+            margin-left: 10px;
+            /* 左外边距 */
+        }
+
+        /* 页脚信息链接：悬停效果 */
+        .footer .footer-info a:hover {
+            text-decoration: underline;
+            /* 悬停时添加下划线 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="backg">
+        <!-- 头部部分 -->
+        <header id="header">
+            <div class="header-top">
+                <div class="logo animation">中医中药网</div>
+                <div class="search">
+                    <form action="index.html" method="get">
+                        <input type="search" placeholder="站内搜索">
+                        <input type="submit" value="搜索">
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <!-- 导航栏 -->
+        <nav id="navbar" class="nav">
+            <ul>
+                <li><a class="ltitle" href="index.html">首页</a></li>
+                <li><a class="ltitle" href="ZYYS.html">中医养生</a></li>
+                <li><a class="ltitle" href="ZYYC.html">中医药材</a></li>
+                <li><a class="ltitle" href="SHILIAO.html">食疗调理</a></li>
+            </ul>
+        </nav>
+
+        <!-- 内容区域 -->
+        <div class="content">
+            <h1>通过食疗调理身体</h1>
+            <p>食疗在中医养生中占有重要地位，旨在通过合理搭配食材、调整饮食习惯来促进身体健康。不同的食材有不同的功效，适合不同体质的人群。本文将介绍一些常见且易于操作的食疗方，帮助您日常调理身体。</p>
+
+            <h2>食疗调理的基本原则</h2>
+            <p>食疗调理的核心是根据个人的体质、季节变化和健康状况来选择合适的食材。通过食物的药性来调整体内的阴阳、气血等状态，达到防病治病、延年益寿的效果。常见的食疗原则包括：</p>
+            <ul>
+                <li>遵循阴阳平衡的原则，适应不同体质的需求。</li>
+                <li>根据季节调整食材，夏季偏凉，冬季偏温。</li>
+                <li>注重食物的搭配，避免食物之间的相克。</li>
+            </ul>
+
+            <h2>常见的食疗方法</h2>
+            <div class="food-recipe">
+                <div class="recipe-card">
+                    <h3>枸杞红枣茶</h3>
+                    <img src="images/nrypic1.jpg" alt="枸杞红枣茶"
+                        style="width:100%;height: 150px; border-radius: 8px; margin-bottom: 10px;">
+                    <p>适应人群：体质虚弱、免疫力差的人群。</p>
+                    <p>材料：枸杞10克，红枣5颗，冰糖适量。</p>
+                    <p>功效：枸杞有补肝肾、明目养血的作用，红枣可以补血养气，适合体质虚弱、免疫力差的人群。</p>
+                </div>
+
+                <div class="recipe-card">
+                    <h3>银耳莲子汤</h3>
+                    <img src="images/nrypic2.jpg" alt="银耳莲子汤"
+                        style="width:100%;height: 150px; border-radius: 8px; margin-bottom: 10px;">
+                    <p>适应人群：体内燥热、睡眠质量差的人群。</p>
+                    <p>材料：银耳30克，莲子20克，冰糖适量。</p>
+                    <p>功效：银耳能润肺清燥，莲子可以养心安神，特别适合那些体内燥热、失眠的人群。</p>
+                </div>
+            </div>
+
+            <h3>其他食疗推荐</h3>
+            <ul>
+                <li>八珍汤：适合气血两虚的调理。</li>
+                <li>红糖姜茶：适合寒冷季节，帮助驱寒暖胃。</li>
+                <li>百合绿豆汤：清热解毒，适合夏季食用。</li>
+            </ul>
+        </div>
+
+        <!-- 页脚部分 -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#">首页</a>
+                <a href="#">中医药材</a>
+                <a href="#">中医养生</a>
+                <a href="#">食疗调理</a>
+            </div>
+
+            <div class="footer-info">
+                <p>© 2024 浙大城市学院</p>
+                <p>学院地址：杭州市湖州街51号 / 邮编：310015</p>
+                <p>
+                    <a href="#">联系我们</a> |
+                    <a href="#">法律声明</a> |
+                    <a href="#">隐私政策</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1171 @@
+﻿body {
+   font-family: Arial, sans-serif;
+   /* 设置字体为 Arial 或 sans-serif */
+   min-height: 100vh;
+   /* 设置页面最小高度为 100vh，确保页面内容填满整个视口 */
+   height: 100vh;
+   /* 设置页面高度为 100vh，确保页面内容填满整个视口 */
+   margin: 0;
+   /* 去除默认的页面外边距 */
+   min-width: 600px;
+   /* 设置最小宽度为 600px，避免页面内容过窄 */
+}
+
+.backg {
+   background-image: url(../images/background.jpg);
+   /* 设置背景图片路径 */
+   background-size: cover;
+   /* 背景图片覆盖整个容器 */
+}
+
+body,
+.container {
+   overflow: visible;
+   /* 确保容器不限制 sticky 定位，允许内容溢出 */
+}
+
+.header-top {
+   display: flex;
+   /* 使用 Flexbox 布局，使子元素在水平和垂直方向上对齐 */
+   justify-content: space-between;
+   /* 子元素左右分布，均匀分布在容器内 */
+   align-items: center;
+   /* 子元素在垂直方向上居中对齐 */
+   background-image: url('../images/top.png');
+   /* 设置顶部背景图片 */
+   background-size: cover;
+   /* 背景图片覆盖容器，确保无缝连接 */
+   background-position: center;
+   /* 背景图片居中显示 */
+   height: 150px;
+   /* 设置容器的高度为 150px */
+   padding: 0 30px;
+   /* 为容器左右添加 30px 内边距 */
+}
+
+
+/* Logo 样式 */
+
+.logo {
+   width: 674px;
+   /* 设置 Logo 宽度为 674px */
+   border-right: 2px solid #eee;
+   /* 在 Logo 右侧添加 2px 宽的浅灰色边框 */
+   font-size: 40px;
+   /* 设置字体大小为 40px */
+   text-align: center;
+   /* 设置文本水平居中对齐 */
+   white-space: nowrap;
+   /* 防止文本换行 */
+   overflow: hidden;
+   /* 超出范围的文本将被隐藏 */
+   color: #2a1506;
+   /* 设置字体颜色为深棕色 */
+   font-family: "楷体", serif;
+   /* 设置字体为楷体或衬线字体 */
+}
+
+.animation {
+   animation: grow 4s steps(44) 1s normal both,
+      /* 设置动画效果：grow，持续 4 秒，每 44 步完成 */
+      blink 0.5s steps(44) infinite normal;
+   /* 设置动画效果：blink，持续 0.5 秒，循环播放 */
+}
+
+@keyframes grow {
+   from {
+      width: 0;
+      /* 动画起始时宽度为 0 */
+   }
+
+   to {
+      width: 400px;
+      /* 动画结束时宽度为 400px */
+   }
+}
+
+@keyframes blink {
+   from {
+      border-right-color: #eee;
+      /* 动画起始时，右侧边框颜色为浅灰色 */
+   }
+
+   to {
+      border-right-color: #222;
+      /* 动画结束时，右侧边框颜色变为深灰色 */
+   }
+}
+
+/* 搜索栏样式 */
+.search form {
+   display: flex;
+   /* 使用 flexbox 布局，水平排列子元素 */
+   position: relative;
+   /* 设置为相对定位，可以调整相对于正常位置的位置 */
+   right: 50px;
+   /* 向右移动 50px */
+}
+
+/* 搜索框输入框样式 */
+.search input[type="search"] {
+   padding: 10px;
+   /* 为输入框添加 10px 的内边距 */
+   font-size: 14px;
+   /* 设置字体大小为 14px */
+   width: 200px;
+   /* 设置输入框宽度为 200px */
+}
+
+/* 搜索框提交按钮样式 */
+.search input[type="submit"] {
+   padding: 10px;
+   /* 为按钮添加 10px 的内边距 */
+   font-size: 14px;
+   /* 设置按钮字体大小为 14px */
+   background-color: #000000;
+   /* 设置背景色为黑色 */
+   color: white;
+   /* 设置按钮字体颜色为白色 */
+   border: none;
+   /* 去除按钮边框 */
+   cursor: pointer;
+   /* 鼠标悬停时显示手型 */
+}
+
+/* 搜索框提交按钮：悬停时的样式 */
+.search input[type="submit"]:hover {
+   background-color: #57575e;
+   /* 鼠标悬停时，按钮背景色变为深灰色 */
+}
+
+
+/* 导航栏样式 */
+#navbar {
+   background-color: rgb(93, 72, 45);
+   /* 设置导航栏的背景色为深棕色 */
+   position: sticky;
+   /* 使导航栏具有粘性定位 */
+   top: 0;
+   /* 定位导航栏在页面顶部 */
+   width: 100%;
+   /* 设置导航栏的宽度占满整个屏幕 */
+   height: 60px;
+   /* 设置导航栏的高度为 60px */
+   z-index: 1000000;
+   /* 设置较高的层级，使导航栏处于其他元素上方 */
+}
+
+/* 导航栏列表样式 */
+.nav ul {
+   width: 60%;
+   /* 设置导航栏列表的宽度为 60% */
+   height: 30px;
+   /* 设置导航栏列表的高度为 30px */
+   display: flex;
+   /* 使用 flexbox 布局，使子元素水平排列 */
+   margin: 0;
+   /* 去除外边距 */
+   padding-left: 20%;
+   /* 设置左内边距为 20% */
+   padding-right: 20%;
+   /* 设置右内边距为 20% */
+   list-style: none;
+   /* 去除列表项符号 */
+   padding-top: 15px;
+   /* 设置顶部内边距为 15px */
+   justify-content: space-between;
+   /* 使用间隔对齐方式排列子元素 */
+}
+
+/* 导航链接样式 */
+.ltitle {
+   text-decoration: none;
+   /* 去除链接的下划线 */
+   color: white;
+   /* 设置字体颜色为白色 */
+   font-size: 20px;
+   /* 设置字体大小为 20px */
+}
+
+/* 导航链接：悬停效果 */
+.nav ul li a:hover {
+   color: #a9a9a9;
+   /* 鼠标悬停时，将链接文字颜色设置为浅灰色 */
+}
+
+/* 导航栏列表项样式 */
+.nav ul li {
+   position: relative;
+   /* 设置相对定位，便于下拉菜单的绝对定位 */
+}
+
+/* 下拉菜单容器样式 */
+.drop {
+   display: inline-block;
+   /* 设置为内联块级元素，允许子元素在一行显示 */
+}
+
+/* 下拉菜单内容样式 */
+.dropcontent {
+   display: none;
+   /* 默认情况下，隐藏下拉菜单内容 */
+   position: absolute;
+   /* 绝对定位，确保菜单出现在正确的位置 */
+   background-color: rgb(93, 72, 45);
+   /* 设置下拉菜单背景色为深棕色 */
+   min-width: 160px;
+   /* 设置下拉菜单的最小宽度为 160px */
+   z-index: 1;
+   /* 设置较低的层级，确保菜单在导航栏之下 */
+}
+
+/* 下拉菜单链接样式 */
+.dropcontent a {
+   color: rgb(255, 255, 255);
+   /* 设置链接文字颜色为白色 */
+   padding: 12px 16px;
+   /* 设置链接的内边距 */
+   text-decoration: none;
+   /* 去除链接的下划线 */
+   display: block;
+   /* 设置为块级元素，使链接占据一整行 */
+   text-align: left;
+   /* 设置文本左对齐 */
+}
+
+/* 下拉菜单链接：悬停效果 */
+.dropcontent a:hover {
+   background-color: rgb(95, 76, 51);
+   /* 鼠标悬停时，将背景色变为稍浅的棕色 */
+}
+
+/* 显示下拉菜单内容 */
+.drop:hover .dropcontent {
+   display: block;
+   /* 鼠标悬停时，显示下拉菜单内容 */
+}
+
+
+
+/* 内容容器样式 */
+.container1 {
+   display: flex;
+   /* 使用 flexbox 布局，水平排列子元素 */
+   width: 80vw;
+   /* 设置容器宽度为视口宽度的 80% */
+   margin: 0 auto;
+   /* 将容器水平居中 */
+   position: relative;
+   /* 设置相对定位，方便内部元素的绝对定位 */
+}
+
+/* 每个面板的样式 */
+.panel {
+   background-size: cover;
+   /* 背景图覆盖整个容器 */
+   background-position: center;
+   /* 背景图居中 */
+   background-repeat: no-repeat;
+   /* 不重复背景图 */
+   height: 80vh;
+   /* 设置面板的高度为视口高度的 80% */
+   border-radius: 50px;
+   /* 设置圆角，面板的角部为圆形 */
+   color: #ffffff;
+   /* 设置字体颜色为白色 */
+   cursor: pointer;
+   /* 鼠标悬停时显示手型光标 */
+   flex: 0.5;
+   /* 每个面板占用父容器的一半空间 */
+   margin: 10px;
+   /* 设置外边距 */
+   position: relative;
+   /* 设置相对定位，便于子元素的绝对定位 */
+   -webkit-transition: all 700ms ease-in;
+   /* 设置过渡效果，所有属性在 700 毫秒内变化 */
+}
+
+/* 面板标题的样式 */
+.panel h3 {
+   font-size: 24px;
+   /* 设置字体大小为 24px */
+   position: absolute;
+   /* 绝对定位，标题在面板内 */
+   bottom: 20px;
+   /* 设置标题距离底部 20px */
+   left: 20px;
+   /* 设置标题距离左侧 20px */
+   margin: 0;
+   /* 去除外边距 */
+   opacity: 0;
+   /* 设置初始透明度为 0（隐藏） */
+}
+
+/* 激活面板样式 */
+.panel.active {
+   flex: 5;
+   /* 激活面板时，占用更多空间（5倍于默认大小） */
+}
+
+/* 激活面板标题的样式 */
+.panel.active h3 {
+   opacity: 1;
+   /* 激活时，设置标题为完全可见 */
+   transition: opacity 0.3s ease-in 0.4s;
+   /* 设置渐变效果，延迟 0.4s 后开始 0.3 秒内渐变显示标题 */
+}
+
+/* 分隔线样式 */
+.fg {
+   width: auto;
+   /* 设置宽度为自动 */
+   height: 5px;
+   /* 设置高度为 5px */
+   background: url(../images/hx.png) repeat-x;
+   /* 设置背景图，横向重复 */
+   display: block;
+   /* 显示为块级元素 */
+   unicode-bidi: isolate;
+   /* 强制文本方向不受上下文影响 */
+   z-index: 1000;
+   /* 设置较高的层级，使其在其他元素上方 */
+}
+
+/* 标题区域样式 */
+.ZYYStitle {
+   width: 80vw;
+   /* 宽度为视口宽度的 80% */
+   height: 60px;
+   /* 设置高度为 60px */
+   background-image: url(../images/scroll.png);
+   /* 设置背景图 */
+   background-repeat: no-repeat;
+   /* 不重复背景图 */
+   background-position-x: 280px;
+   /* 设置背景图的水平位置 */
+   display: flex;
+   /* 使用 flexbox 布局 */
+   align-items: center;
+   /* 垂直居中对齐子元素 */
+   margin: 0 auto;
+   /* 将标题区域水平居中 */
+   padding-left: 400px;
+   /* 设置左内边距为 400px */
+}
+
+/* 标题文字样式 */
+.ZYYStitle h3 {
+   width: 200px;
+   /* 设置标题宽度为 200px */
+   font-size: 2em;
+   /* 设置字体大小为 2em */
+   color: #8B4513;
+   /* 设置字体颜色为 SaddleBrown（棕褐色） */
+}
+
+/* 标题区域链接样式 */
+.ZYYStitle a {
+   text-decoration: none;
+   /* 去除链接的下划线 */
+   margin-right: 20px;
+   /* 设置右外边距为 20px */
+   color: #000;
+   /* 设置字体颜色为黑色 */
+}
+
+/* 标题区域链接：悬停效果 */
+.ZYYStitle a:hover {
+   color: #5A3310;
+   /* 鼠标悬停时，将链接文字颜色改为深棕色 */
+}
+
+
+
+.dp1 {
+   background-image: url('../images/dpic1.jpg');
+   /* 设置背景图 */
+   background-size: cover;
+   /* 背景图覆盖容器 */
+   background-position: center;
+}
+
+.dp2 {
+   background-image: url('../images/dpic2.jpg');
+   /* 设置背景图 */
+   background-size: cover;
+   /* 背景图覆盖容器 */
+   background-position: center;
+}
+
+.dp3 {
+   background-image: url('../images/dpic3.jpg');
+   /* 设置背景图 */
+   background-size: cover;
+   /* 背景图覆盖容器 */
+   background-position: center;
+}
+
+.dp4 {
+   background-image: url('../images/dpic4.jpg');
+   /* 设置背景图 */
+   background-size: cover;
+   /* 背景图覆盖容器 */
+   background-position: center;
+}
+
+.dp5 {
+   background-image: url('../images/dpic5.jpg');
+   /* 设置背景图 */
+   background-size: cover;
+   /* 背景图覆盖容器 */
+   background-position: center;
+}
+
+.dp6 {
+   background-image: url('../images/dpic6.jpg');
+   /* 设置背景图 */
+   background-size: cover;
+   /* 背景图覆盖容器 */
+   background-position: center;
+}
+
+.dp7 {
+   background-image: url('../images/dpic7.jpg');
+   /* 设置背景图 */
+   background-size: cover;
+   /* 背景图覆盖容器 */
+   background-position: center;
+}
+
+.dp8 {
+   background-image: url('../images/dpic8.jpg');
+   /* 设置背景图 */
+   background-size: cover;
+   /* 背景图覆盖容器 */
+   background-position: center;
+}
+
+/* 内容容器样式 */
+.container2 {
+   display: grid;
+   /* 使用 grid 布局 */
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   /* 自动填充列，最小宽度 250px，最大宽度为 1fr */
+   gap: 20px;
+   /* 设置网格项之间的间隔为 20px */
+   max-width: 1200px;
+   /* 最大宽度为 1200px */
+   margin: 0 auto;
+   /* 水平居中容器 */
+   padding: 20px;
+   /* 内边距为 20px */
+}
+
+/* 卡片样式 */
+.card2 {
+   background-color: #fff;
+   /* 设置卡片背景颜色为白色 */
+   padding: 20px;
+   /* 设置内边距为 20px */
+   border-radius: 8px;
+   /* 设置圆角，半径为 8px */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   /* 设置阴影效果 */
+   cursor: pointer;
+   /* 鼠标悬停时显示手型光标 */
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   /* 设置过渡效果 */
+   opacity: 0;
+   /* 初始透明度为 0（不可见） */
+   animation: fadeIn 1s forwards;
+   /* 设置淡入动画，持续 1 秒 */
+}
+
+/* 卡片悬停效果 */
+.card2:hover {
+   transform: translateY(-10px);
+   /* 鼠标悬停时，卡片向上移动 10px */
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   /* 悬停时，增加阴影效果 */
+}
+
+/* 卡片标题样式 */
+.card2 h3 {
+   font-size: 1.6rem;
+   /* 设置标题字体大小为 1.6rem */
+   color: #000000;
+   /* 设置标题颜色为黑色 */
+   margin-bottom: 15px;
+   /* 设置标题底部外边距为 15px */
+}
+
+/* 卡片内容段落样式 */
+.card2 p {
+   font-size: 1rem;
+   /* 设置段落字体大小为 1rem */
+   color: #000000;
+   /* 设置段落文字颜色为黑色 */
+   background-color: rgba(214, 214, 214, 0.5);
+   /* 设置段落背景颜色为半透明灰色 */
+   border-radius: 8px;
+   /* 设置圆角，半径为 8px */
+}
+
+/* 卡片中的 "更多" 链接样式 */
+.card2 .more {
+   color: #56ab2f;
+   /* 设置链接颜色为绿色 */
+   margin-top: 10px;
+   /* 设置顶部外边距为 10px */
+   font-size: 1.1rem;
+   /* 设置字体大小为 1.1rem */
+   text-decoration: none;
+   /* 去除下划线 */
+}
+
+/* 动画效果 - 渐变淡入 */
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      /* 从透明度为 0 开始 */
+   }
+
+   to {
+      opacity: 1;
+      /* 逐渐变为完全可见，透明度为 1 */
+   }
+}
+
+/* 详情部分样式 */
+.details {
+   display: none;
+   /* 初始时隐藏详情 */
+   padding: 15px;
+   /* 设置内边距为 15px */
+   margin-top: 10px;
+   /* 设置顶部外边距为 10px */
+   background-color: #f0f0f0;
+   /* 设置背景颜色为浅灰色 */
+   border-radius: 8px;
+   /* 设置圆角，半径为 8px */
+   font-size: 0.95rem;
+   /* 设置字体大小为 0.95rem */
+   color: #444;
+   /* 设置字体颜色为深灰色 */
+}
+
+/* card2 动画效果 - 从左滑入 */
+@keyframes slideInLeft {
+   from {
+      transform: translateX(-100%);
+      /* 从屏幕外的左侧开始 */
+      opacity: 0;
+      /* 初始透明度为 0 */
+   }
+
+   to {
+      transform: translateX(0);
+      /* 滑入至原位置 */
+      opacity: 1;
+      /* 透明度变为 1，完全可见 */
+   }
+}
+
+/* card2 动画效果 - 从右滑入 */
+@keyframes slideInRight {
+   from {
+      transform: translateX(100%);
+      /* 从屏幕外的右侧开始 */
+      opacity: 0;
+      /* 初始透明度为 0 */
+   }
+
+   to {
+      transform: translateX(0);
+      /* 滑入至原位置 */
+      opacity: 1;
+      /* 透明度变为 1，完全可见 */
+   }
+}
+
+/* 默认状态：所有卡片初始化为透明并设置动画时间 */
+.card2 {
+   opacity: 0;
+   /* 默认透明度为 0（不可见） */
+   animation-duration: 1s;
+   /* 设置动画持续时间为 1 秒 */
+   animation-timing-function: ease-out;
+   /* 设置动画缓动函数为 ease-out */
+}
+
+/* 根据不同位置设置不同的滑入动画 */
+.card2.dp1 {
+   animation-name: slideInLeft;
+   /* 从左侧滑入 */
+}
+
+.card2.dp2 {
+   animation-name: slideInRight;
+   /* 从右侧滑入 */
+}
+
+.card2.dp3 {
+   animation-name: slideInLeft;
+   /* 从左侧滑入 */
+}
+
+.card2.dp4 {
+   animation-name: slideInRight;
+   /* 从右侧滑入 */
+}
+
+.card2.dp5 {
+   animation-name: slideInLeft;
+   /* 从左侧滑入 */
+}
+
+.card2.dp6 {
+   animation-name: slideInRight;
+   /* 从右侧滑入 */
+}
+
+.card2.dp7 {
+   animation-name: slideInLeft;
+   /* 从左侧滑入 */
+}
+
+.card2.dp8 {
+   animation-name: slideInRight;
+   /* 从右侧滑入 */
+}
+
+/* 设置卡片进入时的动画延迟，使其顺序出现 */
+.card2 {
+   transition: opacity 1s ease-out;
+   /* 设置过渡效果 */
+   animation-delay: 0.2s;
+   /* 设置延迟 0.2 秒后开始动画 */
+}
+
+.card2:nth-child(2) {
+   animation-delay: 0.4s;
+   /* 第二个卡片延迟 0.4 秒后开始动画 */
+}
+
+.card2:nth-child(3) {
+   animation-delay: 0.6s;
+   /* 第三个卡片延迟 0.6 秒后开始动画 */
+}
+
+.card2:nth-child(4) {
+   animation-delay: 0.8s;
+   /* 第四个卡片延迟 0.8 秒后开始动画 */
+}
+
+.card2:nth-child(5) {
+   animation-delay: 1s;
+   /* 第五个卡片延迟 1 秒后开始动画 */
+}
+
+.card2:nth-child(6) {
+   animation-delay: 1.2s;
+   /* 第六个卡片延迟 1.2 秒后开始动画 */
+}
+
+.card2:nth-child(7) {
+   animation-delay: 1.4s;
+   /* 第七个卡片延迟 1.4 秒后开始动画 */
+}
+
+.card2:nth-child(8) {
+   animation-delay: 1.6s;
+   /* 第八个卡片延迟 1.6 秒后开始动画 */
+}
+
+
+
+/* 内容容器样式 */
+.con_card {
+   font-size: 62.5%;
+   /* 设置字体大小为 62.5%，相当于 10px */
+   display: flex;
+   /* 使用 flex 布局 */
+   justify-content: center;
+   /* 水平居中 */
+   width: 100%;
+   /* 宽度为 100% */
+   margin: 20px 0 80px;
+   /* 设置外边距，上下 20px，底部 80px */
+}
+
+/* 卡片样式 */
+.card {
+   width: 400px;
+   /* 卡片宽度为 400px */
+   margin: 20px;
+   /* 卡片周围设置 20px 的外边距 */
+   background-color: white;
+   /* 背景颜色为白色 */
+   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+   /* 设置阴影效果 */
+}
+
+/* 卡片图片样式 */
+.card__image {
+   width: 100%;
+   /* 图片宽度填充容器 */
+   height: 100%;
+   /* 图片高度填充容器 */
+}
+
+/* 卡片悬停时标题的动画效果 */
+.card:hover .card__caption {
+   top: 50%;
+   /* 将标题垂直居中 */
+   transform: translateY(-50%);
+   /* 垂直偏移，确保完全居中 */
+}
+
+/* 卡片悬停时图片的效果 */
+.card:hover .card__image {
+   transform: translateY(-10px);
+   /* 图片向上移动 10px */
+}
+
+/* 卡片悬停时阴影渐变效果 */
+.card:hover .card__thumb::after {
+   top: 0;
+   /* 渐变背景位置调整为顶部 */
+}
+
+/* 卡片描述部分 */
+.card:hover .card__snippet {
+   margin: 20px 0;
+   /* 增加上下外边距 */
+}
+
+/* 卡片图片的外层容器 */
+.card__thumb {
+   position: relative;
+   /* 相对定位 */
+   max-height: 500px;
+   /* 设置最大高度为 500px */
+   overflow: hidden;
+   /* 超出部分隐藏 */
+}
+
+/* 卡片图片的渐变覆盖层 */
+.card__thumb::after {
+   position: absolute;
+   /* 绝对定位 */
+   top: 0;
+   /* 定位到顶部 */
+   display: block;
+   /* 使伪元素为块级元素 */
+   content: '';
+   /* 无内容，仅用于装饰 */
+   width: 100%;
+   /* 覆盖层宽度为 100% */
+   height: 100%;
+   /* 覆盖层高度为 100% */
+   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 40%, rgba(255, 255, 255, 0) 100%);
+   /* 渐变效果 */
+   transition: .3s;
+   /* 设置过渡时间为 0.3s */
+}
+
+/* 当屏幕宽度大于 1024px 时调整渐变覆盖层的位置 */
+@media (min-width: 1024px) {
+   .card__thumb::after {
+      top: calc(100% - 140px);
+      /* 调整渐变覆盖层位置 */
+   }
+}
+
+/* 图片的过渡效果 */
+.card__image {
+   transition: .5s ease-in-out;
+   /* 设置图片的过渡动画 */
+}
+
+/* 卡片标题样式 */
+.card__caption {
+   position: absolute;
+   /* 绝对定位 */
+   top: 50%;
+   /* 垂直居中 */
+   z-index: 1;
+   /* 层级较高 */
+   padding: 0 20px;
+   /* 水平内边距为 20px */
+   color: white;
+   /* 设置文字颜色为白色 */
+   transform: translateY(-50%);
+   /* 垂直偏移，确保完全居中 */
+   text-align: center;
+   /* 文字居中对齐 */
+   transition: .3s;
+   /* 设置过渡时间为 0.3s */
+}
+
+/* 当屏幕宽度大于 1024px 时，调整标题的位置 */
+@media (min-width: 1024px) {
+   .card__caption {
+      top: calc(100% - 110px);
+      /* 调整标题位置 */
+      transform: unset;
+      /* 取消 translateY 位移 */
+   }
+}
+
+/* 卡片标题的样式 */
+.card__title {
+   display: -webkit-box;
+   /* 使用 Webkit 的多行显示 */
+   max-height: 85px;
+   /* 最大高度为 85px */
+   overflow: hidden;
+   /* 超出部分隐藏 */
+   font-size: 23px;
+   /* 字体大小为 23px */
+   line-height: 28px;
+   /* 行高为 28px */
+   text-shadow: 0px 1px 5px black;
+   /* 设置文本阴影 */
+   text-overflow: ellipsis;
+   /* 超出部分显示省略号 */
+   -webkit-line-clamp: 3;
+   /* 限制最多显示 3 行 */
+   -webkit-box-orient: vertical;
+   /* 设置垂直排列 */
+}
+
+/* 卡片描述部分样式 */
+.card__snippet {
+   display: -webkit-box;
+   /* 使用 Webkit 的多行显示 */
+   max-height: 150px;
+   /* 最大高度为 150px */
+   margin: 20px 0;
+   /* 上下外边距为 20px */
+   overflow: hidden;
+   /* 超出部分隐藏 */
+   font-family: 'Roboto', sans-serif;
+   /* 设置字体 */
+   font-size: 16px;
+   /* 字体大小为 16px */
+   line-height: 20px;
+   /* 行高为 20px */
+   text-overflow: ellipsis;
+   /* 超出部分显示省略号 */
+   transition: .5s ease-in-out;
+   /* 设置过渡效果 */
+   -webkit-line-clamp: 5;
+   /* 限制最多显示 5 行 */
+   -webkit-box-orient: vertical;
+   /* 设置垂直排列 */
+}
+
+/* 当屏幕宽度大于 1024px 时，调整卡片描述的外边距 */
+@media (min-width: 1024px) {
+   .card__snippet {
+      margin: 60px 0;
+      /* 增加上下外边距 */
+   }
+}
+
+/* 卡片按钮样式 */
+.card__button {
+   display: inline-block;
+   /* 设置为行内块元素 */
+   padding: 10px 20px;
+   /* 内边距为 10px 20px */
+   color: white;
+   /* 文字颜色为白色 */
+   border: 1px solid white;
+   /* 边框为白色 */
+   font-family: 'Roboto', sans-serif;
+   /* 设置字体 */
+   font-size: 12px;
+   /* 字体大小为 12px */
+   text-transform: uppercase;
+   /* 设置文字为大写 */
+   text-decoration: none;
+   /* 去除文本装饰 */
+   transition: .3s;
+   /* 设置过渡效果 */
+}
+
+/* 鼠标悬停时按钮的样式 */
+.card__button:hover {
+   color: black;
+   /* 悬停时文字颜色为黑色 */
+   background-color: white;
+   /* 悬停时背景颜色为白色 */
+}
+
+/* 侧边栏样式 */
+.side {
+   width: 10px;
+   /* 宽度为 10px */
+}
+
+/* mq 容器样式 */
+.mq {
+   display: flex;
+   /* 使用 flex 布局 */
+   justify-content: center;
+   /* 水平居中 */
+   align-items: center;
+   /* 垂直居中 */
+   width: 90vw;
+   /* 宽度为 90% 的视口宽度 */
+   background-color: rgba(255, 255, 255, 0.9);
+   /* 半透明背景 */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   /* 添加阴影 */
+   border-radius: 10px;
+   /* 圆角效果 */
+   padding: 20px;
+   /* 内边距为 20px */
+   margin: 20px auto;
+   /* 页面居中，顶部和底部有 20px 外边距 */
+}
+
+/* mq 内部元素的样式 */
+.zyyc,
+.zyys,
+.zyyf {
+   display: flex;
+   /* 使用 flex 布局 */
+   flex-direction: column;
+   /* 垂直排列子元素 */
+   align-items: center;
+   /* 子元素居中 */
+   width: 30%;
+   /* 宽度为 30% */
+   margin: 0 20px;
+   /* 左右外边距为 20px */
+}
+
+/* mq h3 样式 */
+.mqh3 {
+   font-size: 24px;
+   /* 字体大小为 24px */
+   color: #5c4d3d;
+   /* 字体颜色为深棕色 */
+   margin-bottom: 10px;
+   /* 底部外边距为 10px */
+   text-align: center;
+   /* 文字居中对齐 */
+}
+
+/* mq h3 的伪元素 */
+.mqh3::after {
+   content: '';
+   /* 生成一个伪元素 */
+   display: block;
+   /* 设置为块级元素 */
+   width: 50px;
+   /* 设置宽度为 50px */
+   height: 2px;
+   /* 设置高度为 2px */
+   background-color: #5c4d3d;
+   /* 设置背景颜色为深棕色 */
+   margin: 10px auto;
+   /* 上下外边距为 10px，左右自动 */
+   border-radius: 30px;
+   /* 设置圆角效果 */
+}
+
+/* mq 列表样式 */
+.mq ul {
+   list-style-type: none;
+   /* 去除列表样式 */
+   padding: 0;
+   /* 去除内边距 */
+}
+
+/* mq 列表项样式 */
+.mq li {
+   display: flex;
+   /* 使用 flex 布局 */
+   align-items: center;
+   /* 垂直居中 */
+   height: 40px;
+   /* 高度为 40px */
+   background-color: #f9f9f9;
+   /* 背景颜色为浅灰色 */
+   margin: 10px 0;
+   /* 上下外边距为 10px */
+   padding: 10px;
+   /* 内边距为 10px */
+   border-radius: 5px;
+   /* 圆角效果 */
+   transition: background-color 0.3s;
+   /* 背景颜色过渡效果 */
+   position: relative;
+   /* 相对定位 */
+   cursor: pointer;
+   /* 鼠标悬停时显示手型 */
+}
+
+/* 图标样式 */
+.icon {
+   width: 40px;
+   /* 宽度为 40px */
+   height: 40px;
+   /* 高度为 40px */
+   border-radius: 50%;
+   /* 圆形 */
+   display: flex;
+   /* 使用 flex 布局 */
+   justify-content: center;
+   /* 水平居中 */
+   align-items: center;
+   /* 垂直居中 */
+   margin-right: 10px;
+   /* 右边距为 10px */
+   transition: transform 0.3s ease;
+   /* 动画效果 */
+}
+
+/* 图标内的图片样式 */
+.icon img {
+   max-width: 100%;
+   /* 图片宽度最大为 100% */
+   max-height: 100%;
+   /* 图片高度最大为 100% */
+   border-radius: 50%;
+   /* 图片圆角处理 */
+}
+
+/* mq 列表项悬停效果 */
+.mq li:hover {
+   background-color: #f0e6d6;
+   /* 背景颜色变化 */
+}
+
+/* mq 列表项悬停时图标放大 */
+.mq li:hover .icon {
+   transform: scale(1.2);
+   /* 放大图标 */
+}
+
+/* 页脚样式 */
+.footer {
+   background-color: #f1f1f1;
+   /* 背景颜色为浅灰色 */
+   padding: 20px 0;
+   /* 上下内边距为 20px */
+   border-top: 1px solid #ccc;
+   /* 上边框为浅灰色 */
+   display: flex;
+   /* 使用 flex 布局 */
+   flex-direction: column;
+   /* 垂直排列 */
+   align-items: center;
+   /* 水平居中 */
+   justify-content: center;
+   /* 垂直居中 */
+}
+
+/* 页脚链接部分样式 */
+.footer .footer-links {
+   display: flex;
+   /* 使用 flex 布局 */
+   justify-content: center;
+   /* 水平居中 */
+   gap: 50px;
+   /* 子元素间隔为 50px */
+   margin-bottom: 20px;
+   /* 底部外边距为 20px */
+}
+
+/* 页脚链接的样式 */
+.footer .footer-links a {
+   text-decoration: none;
+   /* 去除文本装饰 */
+   color: #333;
+   /* 文字颜色为深灰色 */
+   font-size: 16px;
+   /* 字体大小为 16px */
+   transition: color 0.3s;
+   /* 文字颜色过渡效果 */
+}
+
+/* 页脚链接悬停时的样式 */
+.footer .footer-links a:hover {
+   color: #5c4d3d;
+   /* 悬停时文字颜色变化 */
+}
+
+/* 页脚版权信息 */
+.footer .footer-info {
+   font-size: 14px;
+   /* 字体大小为 14px */
+   color: #777;
+   /* 文字颜色为浅灰色 */
+   text-align: center;
+   /* 文字居中 */
+}
+
+/* 页脚中的其他链接样式 */
+.footer .footer-info a {
+   text-decoration: none;
+   /* 去除文本装饰 */
+   color: #5c4d3d;
+   /* 文字颜色为深棕色 */
+   margin-left: 10px;
+   /* 左边距为 10px */
+}
+
+/* 页脚中的其他链接悬停时的样式 */
+.footer .footer-info a:hover {
+   text-decoration: underline;
+   /* 悬停时添加下划线 */
+}
+
+/* 返回顶部按钮样式 */
+.to-top-btn {
+   position: fixed;
+   /* 固定位置 */
+   bottom: 30px;
+   /* 距离底部 30px */
+   right: 30px;
+   /* 距离右边 30px */
+   width: 50px;
+   /* 宽度为 50px */
+   height: 50px;
+   /* 高度为 50px */
+   border-radius: 50%;
+   /* 圆形按钮 */
+   background-color: #8d6c58;
+   /* 按钮背景颜色 */
+   color: white;
+   /* 按钮字体颜色为白色 */
+   text-align: center;
+   /* 文字居中 */
+   line-height: 50px;
+   /* 垂直居中 */
+   font-size: 18px;
+   /* 字体大小为 18px */
+   cursor: pointer;
+   /* 鼠标悬停时显示手型 */
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   /* 添加阴影效果 */
+   z-index: 1000;
+   /* 确保按钮在最上层 */
+   display: none;
+   /* 默认隐藏 */
+   transition: background-color 0.3s, transform 0.3s;
+   /* 背景颜色和放大效果过渡 */
+}
+
+/* 返回顶部按钮悬停样式 */
+.to-top-btn:hover {
+   background-color: #5c4d3d;
+   /* 背景颜色变化 */
+   transform: scale(1.1);
+   /* 放大按钮 */
+}

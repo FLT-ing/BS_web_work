@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中医中药网</title>
+    <link rel="icon" href="images/teapot.ico">
+    <link rel="stylesheet" href="css3/style.css">
+</head>
+
+<body>
+    <div class="backg">
+        <!-- 头部部分 -->
+        <header id="header">
+            <!-- 背景图和搜索框 -->
+            <div class="header-top">
+                <div class="logo animation">中医中药网</div>
+                <div class="search">
+                    <form action="index.html" method="get">
+                        <input type="search" placeholder="站内搜索">
+                        <input type="submit" value="搜索">
+                    </form>
+                </div>
+            </div>
+        </header>
+        <!-- 导航栏 -->
+        <nav id="navbar" class="nav">
+            <ul>
+                <li><a class="ltitle" href="index.html">首页</a></li>
+                <li><a class="ltitle" href="ZYYS.html">中医养生</a></li>
+                <li><a class="ltitle" href="ZYYC.html">中医药材</a></li>
+                <li class="drop">
+                    <a class="ltitle" href="#recipe">中医药方</a>
+                    <div class="dropcontent">
+                        <a href="#">中药减肥</a>
+                        <a href="#">药方大全</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 页面内容 -->
+        <div class="content">
+            <div class="container1">
+                <div class="panel active" style="background-image: url('images/gkpic1.jpg')">
+                    <h3>治疗心理 治疗生理</h3>
+                </div>
+                <div class="panel" style="background-image: url('images/gkpic2.jpg')">
+                    <h3>感悟中药</h3>
+                </div>
+                <div class="panel" style="background-image: url('images/gkpic3.jpg')">
+                    <h3>中医如何走向国际</h3>
+                </div>
+                <div class="panel" style="background-image: url('images/gkpic4.jpg')">
+                    <h3>针灸</h3>
+                </div>
+                <div class="panel" style="background-image: url('images/gkpic5.jpg')">
+                    <h3>中医药方知多少</h3>
+                </div>
+            </div>
+            <div class="fg"></div>
+            <div class="ZYYStitle">
+                <h3>中医养生</h3>
+                <p><a href="#">TCM 养生文化</a></p>
+                <p><a href="#">老人养生</a></p>
+                <p><a href="#">白领养生</a></p>
+                <p><a href="#">小儿益智</a></p>
+                <p><a href="#">母婴养生</a></p>
+                <p><a href="#">自律公约</a></p>
+                <p><a href="#">居家养生</a></p>
+            </div>
+            <div class="container2">
+                <!-- 每个内容块 -->
+                <div class="card2 dp1" onclick="toggleDetails(this)">
+                    <h3>TCM 养生文化</h3>
+                    <p>了解中医养生的历史与文化，探索传统疗法。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>中医养生文化强调通过自然与人体的和谐调节，达到阴阳平衡、五行相生的状态。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp2" onclick="toggleDetails(this)">
+                    <h3>气功太极</h3>
+                    <p>练习气功太极，调节身体气血，增强免疫力。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>气功和太极是一种修身养性的运动，通过调节呼吸与动作的结合，达到健身和养生的效果。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp3" onclick="toggleDetails(this)">
+                    <h3>老人养生</h3>
+                    <p>关注老年人的健康，提供适合的养生建议。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>老年人养生主要通过饮食、运动和心理的调节来改善生活质量。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp4" onclick="toggleDetails(this)">
+                    <h3>白领养生</h3>
+                    <p>帮助白领缓解压力，改善体质，提升工作效率。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>白领养生关注合理膳食、适量运动和心理放松，以减少久坐和高压力对身体的负面影响。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp5" onclick="toggleDetails(this)">
+                    <h3>小儿益智</h3>
+                    <p>通过中医养生调理儿童的生长发育，增强免疫力。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>小儿益智养生通过食疗、按摩和中草药等方式，帮助孩子提高免疫力和智力发展。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp6" onclick="toggleDetails(this)">
+                    <h3>母婴养生</h3>
+                    <p>为准妈妈和婴儿提供全面的养生指导，促进健康。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>母婴养生注重营养搭配、舒适环境和心理平衡，帮助准妈妈和婴儿度过健康成长阶段。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp7" onclick="toggleDetails(this)">
+                    <h3>自律公约</h3>
+                    <p>了解如何自律管理，提供高质量服务。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>平台自律公约确保提供透明、健康的信息内容，支持可持续和负责任的中医养生理念。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp8" onclick="toggleDetails(this)">
+                    <h3>居家养生</h3>
+                    <p>通过日常生活中的小习惯，促进居家环境的养生。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>居家养生强调环境优化、饮食调整和适度运动，以提升家庭成员的身体健康和心理舒适度。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ZYYStitle">
+                <h3>中医药材</h3>
+                <p><a href="#">常见中草药</a></p>
+                <p><a href="#">药材功效</a></p>
+                <p><a href="#">草药使用方法</a></p>
+                <p><a href="#">药材采集与保存</a></p>
+                <p><a href="#">中药食疗</a></p>
+                <p><a href="#">药材与疾病</a></p>
+                <p><a href="#">药材种植</a></p>
+            </div>
+
+            <div class="container2">
+                <!-- 每个内容块 -->
+                <div class="card2 dp4" onclick="toggleDetails(this)">
+                    <h3>常见中草药</h3>
+                    <p>介绍常用的中草药及其基本信息，帮助您了解它们的用途。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>常见的中草药包括人参、黄芪、枸杞、丹参等，这些药材在中医中有着广泛的应用，主要用于调节身体的阴阳平衡。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp1" onclick="toggleDetails(this)">
+                    <h3>药材功效</h3>
+                    <p>探索各类药材的功效，了解它们如何对身体健康产生积极影响。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>药材的功效因其所含的有效成分而有所不同，如人参有补气健脾的作用，枸杞有滋肝明目的功效。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp2" onclick="toggleDetails(this)">
+                    <h3>草药使用方法</h3>
+                    <p>学习如何正确使用草药，包括炮制、煎煮等方法。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>草药的使用方法包括直接煎煮成汤剂、研磨成粉或调配成药膏等，每种方法都有其特定的使用场合和效果。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp6" onclick="toggleDetails(this)">
+                    <h3>药材采集与保存</h3>
+                    <p>了解如何正确采集和保存中草药，保证药材的质量和功效。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>药材的采集时间和方式直接影响其质量，正确的保存方法能有效防止药材的失效和变质。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp3" onclick="toggleDetails(this)">
+                    <h3>中药食疗</h3>
+                    <p>通过食疗结合中药，促进健康和预防疾病。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>中药食疗是一种结合饮食和中草药的养生方法，可以调理体质、预防疾病，常见的如枸杞炖鸡、红枣煮汤等。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp5" onclick="toggleDetails(this)">
+                    <h3>药材与疾病</h3>
+                    <p>研究药材对特定疾病的治疗作用，探索药材的医学价值。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>不同药材对各种疾病有不同的疗效，如当归能调节女性的月经问题，黄芪有提高免疫力的作用。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp9" onclick="toggleDetails(this)">
+                    <h3>药材种植</h3>
+                    <p>学习如何种植中草药，确保药材的天然与有效性。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>中草药的种植需要根据不同植物的生长特性进行科学管理，从选址、土壤到气候条件都需要考虑。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp8" onclick="toggleDetails(this)">
+                    <h3>药材的现代研究</h3>
+                    <p>了解现代科学如何研究中医药材，验证其药理功效。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>随着科技的发展，许多传统药材的成分和药效得到了现代医学的验证，进一步推动了中医药的发展与应用。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ZYYStitle">
+                <h3>中医药方</h3>
+                <p><a href="#">常见药方</a></p>
+                <p><a href="#">治疗疾病</a></p>
+                <p><a href="#">药方配伍</a></p>
+                <p><a href="#">经典名方</a></p>
+                <p><a href="#">药方应用</a></p>
+                <p><a href="#">药方讲解</a></p>
+                <p><a href="#">调理身体</a></p>
+            </div>
+
+            <div class="container2">
+                <!-- 每个内容块 -->
+                <div class="card2 dp2" onclick="toggleDetails(this)">
+                    <h3>常见药方</h3>
+                    <p>了解常见的中医药方及其基本功效，帮助您选择适合的药方。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>常见药方包括四君子汤、六味地黄丸、当归四逆汤等，这些药方主要用于调理气血、滋阴补肾、疏通经络等。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp1" onclick="toggleDetails(this)">
+                    <h3>治疗疾病</h3>
+                    <p>探讨如何使用中医药方治疗常见疾病，缓解身体不适。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>根据不同的症状，采用不同的药方，如风湿性关节炎可以使用独活寄生汤，感冒则可以用桂枝汤等。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp4" onclick="toggleDetails(this)">
+                    <h3>药方配伍</h3>
+                    <p>学习药方配伍的原则和方法，提高药效，减少副作用。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>药方的配伍讲究相生相克，合理搭配能够增强疗效，如人参与黄芪常常一起使用以补气健脾。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp3" onclick="toggleDetails(this)">
+                    <h3>经典名方</h3>
+                    <p>介绍中医经典药方，它们在历史上广泛应用，疗效显著。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>经典名方如四物汤、八珍汤、柴胡疏肝散等，这些药方经过千百年的实践验证，有着非常高的使用价值。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp6" onclick="toggleDetails(this)">
+                    <h3>药方应用</h3>
+                    <p>探索药方在日常生活中的实际应用，改善健康。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>药方可以根据个人体质、季节变化等因素灵活应用，如在秋冬季节使用养肺的药方来预防感冒。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp5" onclick="toggleDetails(this)">
+                    <h3>药方讲解</h3>
+                    <p>深入讲解常用药方的原理和组成成分。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>每个药方都有其独特的药理原理和成分配比，如四君子汤包含人参、白术、茯苓和甘草，旨在补气健脾。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp8" onclick="toggleDetails(this)">
+                    <h3>调理身体</h3>
+                    <p>通过合理选择药方调理身体，保持健康。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>药方调理身体能够帮助保持体内的阴阳平衡，增强免疫力，如补气药方适用于体力虚弱者，养血药方适用于贫血者。</p>
+                    </div>
+                </div>
+
+                <div class="card2 dp7" onclick="toggleDetails(this)">
+                    <h3>药方的现代应用</h3>
+                    <p>研究药方在现代医学中的应用，验证其疗效。</p>
+                    <a href="#" class="more">更多 &gt;&gt;</a>
+                    <div class="details">
+                        <p>现代医学的研究验证了很多中医药方的疗效，如黄芪汤被用于提高免疫力，四物汤被用于调理女性月经不调。</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fg"></div>
+            <div class="scroll-container con_card">
+                <div class="card" id="c1">
+                    <figure class="card__thumb">
+                        <img src="images/shzbl.jpg" class="card__image">
+                        <figcaption class="card__caption">
+                            <h2 class="card__title">《伤寒杂病论》</h2>
+                            <p class="card__snippet">《伤寒杂病论》是中国传统医学著作之一，是一部论述外感病与内科杂病为主要内容的医学典籍，作者是东汉末年张仲景。</p>
+                            <a href="book.html" class="card__button" style="text-decoration: none;">查看更多</a>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card" id="c2">
+                    <figure class="card__thumb">
+                        <img src="images/qjf.jpg" class="card__image">
+                        <figcaption class="card__caption">
+                            <h2 class="card__title">《千金方》</h2>
+                            <p class="card__snippet">
+                                《千金方》、《千金要方》又称《备急千金要方》，是中国古代中医学经典著作之一，共30卷，是综合性临床医著，被誉为中国最早的临床百科全书。唐朝孙思邈所著。</p>
+                            <a href="book.html" class="card__button" style="text-decoration: none;">查看更多</a>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card" id="c3">
+                    <figure class="card__thumb">
+                        <img src="images/bcgm.jpg" class="card__image">
+                        <figcaption class="card__caption">
+                            <h2 class="card__title">《本草纲目》</h2>
+                            <p class="card__snippet">
+                                《本草纲目》中国古代药学史上部头最大、内容最丰富的药学巨著。明代李时珍撰成于1578年。它被誉为“东方医药巨典”、“中国古代百科全书”。
+                            </p>
+                            <a href="book.html" class="card__button" style="text-decoration: none;">查看更多</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="fg"></div>
+            <div class="mq">
+                <div class="side"></div>
+                <div class="zyyc">
+                    <h3 class="mqh3">中医药材</h3>
+                    <ul>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk1.jpg" alt="图标1"></div>
+                            八角茴香：香料背后的传奇药材！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk2.jpg" alt="图标2"></div>
+                            大闸蟹驱寒：健康饮食养生的天花板！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk3.jpg" alt="图标3"></div>
+                            黑芝麻虽好，但应适量食用，过量食用可能增加肠胃负担!
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标4"></div>
+                            秋季养生茶饮：迎接金秋健康美味！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk5.jpg" alt="图标5"></div>
+                            灯笼草的种植方法及其治热咳咽痛！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk6.jpg" alt="图标6"></div>
+                            旱莲草是一种生命力很顽强的药用野草！
+                        </li>
+                    </ul>
+                </div>
+                <div class="zyys">
+                    <h3 class="mqh3">中医养生</h3>
+                    <ul>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标7"></div>
+                            越“冻”越要动！冬季运动正确打开方式！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标8"></div>
+                            喝完补气中药为何放屁增多：解析与应对
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标9"></div>
+                            如何通过中医料理的方法来缓解和治疗口臭?
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标10"></div>
+                            蜂乳能够刺激机体的生长和发育，延缓衰老过程！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标11"></div>
+                            每天在家做这几件小事,让你身体越来越健康！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标12"></div>
+                            预防佝偻病的方法有哪些？
+                        </li>
+                    </ul>
+                </div>
+                <div class="zyyf">
+                    <h3 class="mqh3">中医药方</h3>
+                    <ul>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标13"></div>
+                            中药碎骨子的功效与作用及其药用禁忌有哪些？
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标14"></div>
+                            关木通虽然有清热泻火的作用，但是其药材毒性却远大于药用功效！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标15"></div>
+                            青木香治皮肤湿烂疮，青木香的用药方法？
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标16"></div>
+                            中医教你用紫珠叶外敷可清热解毒，治疗多种出血症！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标17"></div>
+                            中药独脚柑不仅可用来清肝明目，还有驱虫止痛的作用！
+                        </li>
+                        <li>
+                            <div class="icon"><img src="../中医中药网/images/mk4.jpg" alt="图标18"></div>
+                            古方中的地骨皮药方虽然配药简单，但其药用功效可不敢小视！
+                        </li>
+                    </ul>
+                </div>
+                <div class="side"></div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-links">
+                    <a href="#">首页</a>
+                    <a href="#">中医药材</a>
+                    <a href="#">中医养生</a>
+                    <a href="#">中医药方</a>
+                </div>
+
+                <div class="footer-info">
+                    <p>© 2024 浙大城市学院</p>
+                    <p>学院地址：杭州市湖州街51号 / 邮编：310015</p>
+                    <p>
+                        <a href="#">联系我们</a> |
+                        <a href="#">法律声明</a> |
+                        <a href="#">隐私政策</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 回到顶部按钮 -->
+            <div class="to-top-btn" id="toTopBtn">↑</div>
+
+            <script src="js/main.js"></script>
+        </div>
+</body>
+
+</html>
